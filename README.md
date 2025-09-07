@@ -1,2 +1,1 @@
-# JuneLazarus_Blog
-Keep progressing
+# Created By JuneLazarus
