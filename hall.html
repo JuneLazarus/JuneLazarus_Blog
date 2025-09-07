@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <link rel="stylesheet" href="bk_colour.css">
+    <link rel="stylesheet" href="navigator.css">
+    <title>JuneLazarus|大厅</title>
+    <script src="https://cdn.staticfile.net/vue/3.0.5/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
+</head>
+<body>
+    <div class="viewpage">
+        <div class="maincontain">
+        <div class="selection">
+            <div><a href="hall.html"><img src="gxc2.jpg" alt="工小成还在赶来的路上~" id="gxcwel"></img></a></div>
+            <div class="selector">
+                <div>
+                    <a href="creator.html" id="todolink">作者简介</a>
+                </div>   
+                <div>
+                    <a href="index.html" id="exitlink">退出登录</a>
+                </div>  
+                <div>
+                    <a href="diary.html" id="courselink">开发日志</a>
+                </div>  
+            </div>
+        </div>
+        </div>
+
+        <div class="function">
+            <div class="intropage"><img src="Kun1.jpg" class="bg"></div>
+            <a href="todolist.html"><img src="Kun1.jpg" class="bg" id="rightin"></a>
+            <a href="course.html"><img src="Kun1.jpg" class="bg" id="upin"></a>
+            <a href="article.html"><img src="Kun1.jpg" class="bg" id="diffus"></a>
+        </div>
+    </div>
+</body>
+<style>
+
+.maincontain{
+    padding-left: 10%;
+    max-width:37vw;
+    padding-right:0rem;
+    align-items: flex-start;
+}
+
+body{
+    display:flex;
+    height:auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bg{
+    opacity:0.85;
+    height:100vh;
+    border-radius: 5rem;
+    object-fit: cover;
+}
+.bg:hover{
+    transform: scale(0.95) translateX(-10px);
+    opacity:0.9;
+    transition: all 300ms ease;
+}
+
+#rightin{
+    opacity:0.85;
+    height:100vh;
+    border-radius:5rem;
+    object-fit: cover;
+    animation:appear1 linear;
+    animation-timeline:view();
+    animation-range: entry 0 cover 40%;
+}
+
+#upin {
+    opacity:0.85;
+    height:100vh;
+    border-radius:5rem;
+    object-fit: cover;
+    animation: appear2 1.2s ease-out forwards;
+    animation-timeline:view();
+    animation-range: entry 0 cover 40%;
+}
+
+#diffus {
+    opacity:0.85;
+    height:100vh;
+    border-radius:5rem;
+    object-fit: cover;
+    animation: appear3 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation-timeline:view();
+    animation-range: entry 0 cover 80%;
+        }
+
+.selection {
+    width: 25rem;
+    height: 25rem;
+    overflow: hidden;
+    gap: 0.5rem;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 150ms ease;
+    border-radius: 50%;
+    position: relative;
+}
+
+.selection:hover {
+    width: 50rem;
+    height: 30rem;
+    border-radius: 3rem;
+}
+.selection:hover #gxcwel {
+    opacity: 1;
+    width: 28rem; 
+}
+.selection:hover .selector{
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+.viewpage{
+    margin-right: 0;
+    right: 0;
+    padding-right: 0;
+    position:fixed;
+    top:0;
+    display:flex;
+    width: 100%;
+    height:100vh;
+    overflow-y: auto;
+}
+
+.function{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 60vw; 
+    flex-shrink: 0;
+}
+@keyframes appear1{
+    from{
+        opacity: 0;
+        transform: translateX(50rem),translateY(50rem);
+        scale:0.75;
+    }
+    to{
+        opacity: 0.85;
+        transform: translateX(0),translateY(0);
+        scale:1;
+    }
+}
+
+@keyframes appear2{
+    from{
+        opacity: 0;
+        transform: translateX(-80rem);
+        height:0;
+    }
+    to{
+        opacity: 0.85;
+        transform: translateX(0);
+        height:1;
+    }
+}
+
+@keyframes appear3 {
+            0% {
+                opacity: 0;
+                transform: scale(0) translateY(-50%);
+                border-radius: 100%;
+                box-shadow: 0 0 0 rgba(52, 152, 219, 0.5);
+            }
+            60% {
+                opacity: 0.85;
+                transform: scale(1) translateY(0);
+                border-radius: 1rem;
+                box-shadow: 0 10px 30px rgba(52, 152, 219, 0.7);
+            }
+            100% {
+                opacity: 0.85;
+                transform: scale(1);
+                border-radius: 5rem;
+                box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+            }
+        }
+
+@media screen and (min-width: 800px) {
+  .one-half {
+    width: calc(50% - 30px / 2);
+  }
+}
+
+</style>
+
+<script>
+
+function refresh(){
+    viewpage.scrollTo(0,0);
+}
+/*viewpage.addEventListener("scroll",handleScroll);
+window.addEventListener("load",resetScroll);*/
+</script>
+</html>
